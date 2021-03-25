@@ -5,12 +5,16 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <style>
-        table{margin: auto;}
-        table th, table td {padding: 15px;}
+        table {
+            margin: auto;
+        }
+        table th, table td {
+            padding: 15px;
+        }
         .row {
             font-style: italic;
         }
-        .even-row{
+        .even-row {
             color: black;
         }
         .odd-row {
@@ -18,27 +22,23 @@
         }
     </style>
 </head>
-
 <body>
 <h3><p align="center">Таблица машин </p></h3>
-
-    <table border="1">
-        <tr>
-
-            <th>Модель <br>
-                автомобиля</th>
-            <th>Серия</th>
-            <th>Объем ДВС, см <sup>3</sup></th>
-        </tr>
-
-        <tr th:each="car, state:${cars}"
-            class="row" th:classappend="${state.odd}? 'odd_row': 'even-row'">
-            <td th:utext="${car.model}">No</td>
-            <td th:utext="${car.series}">No</td>
-            <td th:utext="${car.volume}">No</td>
-        </tr>
-    </table>
-
+<table border="1">
+    <tr>
+        <th>Модель <br>
+            автомобиля
+        </th>
+        <th>Серия</th>
+        <th>Объем ДВС, см <sup>3</sup></th>
+    </tr>
+    <tr th:each="car, state:${cars}"
+        class="row" th:classappend="${state.odd}? 'odd_row': 'even-row'">
+        <td th:utext="${car.model}">No</td>
+        <td th:utext="${car.series}">No</td>
+        <td th:utext="${car.volume}">No</td>
+    </tr>
+</table>
 </body>
 </html>
 
@@ -47,5 +47,4 @@
 
 
 
-</body>
-</html>
+

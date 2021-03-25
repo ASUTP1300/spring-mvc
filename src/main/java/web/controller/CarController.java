@@ -12,7 +12,8 @@ import java.util.Optional;
 public class CarController {
 
     @RequestMapping("/cars")
-    public String printCars2(@RequestParam(value = "count", required = false) Optional<Integer> count, Model model) {
+    public String printCars2(@RequestParam(value = "count", required = false) Optional<Integer> count,
+                             Model model) {
         int n = count.filter(x -> x < 5).orElse(5);
         model.addAttribute("cars", Service.getCar(n));
         return "cars";
